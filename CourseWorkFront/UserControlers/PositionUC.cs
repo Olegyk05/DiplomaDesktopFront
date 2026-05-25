@@ -101,13 +101,13 @@ namespace CourseWorkFront.UserControlers
         {
             if (isSelected)
             {
-                BackColor = Color.LightBlue; // Колір виділеного елемента
-                                             // Або можна змінити BorderStyle = BorderStyle.Fixed3D;
+                BackColor = Color.LightBlue; 
+                                             
             }
             else
             {
-                BackColor = SystemColors.Control; // Повертаємо стандартний колір
-                                                  // BorderStyle = BorderStyle.None;
+                BackColor = SystemColors.Control; 
+                // BorderStyle = BorderStyle.None;
             }
         }
 

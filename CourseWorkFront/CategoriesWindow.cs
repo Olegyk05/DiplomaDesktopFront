@@ -31,6 +31,7 @@ namespace CourseWorkFront
 
             addPositionsToPanel();
             addCategoriesToPanel();
+            DataComponent.UpdatePositionsOnUI += addPositionsToPanel;
         }
 
         public void addPositionsToPanel()
@@ -174,6 +175,27 @@ namespace CourseWorkFront
             EditCategoriesListWindow editCategoriesListWindow = new EditCategoriesListWindow();
             EditCategoriesListWindow.UpdateCategoriestListInAnotherWindows += addCategoriesToPanel;
             editCategoriesListWindow.ShowDialog();
+        }
+
+        private void SearchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            string searchText = SearchTextBox.Text.ToLower().Trim();
+
+            PositionListFlowPanel.SuspendLayout();
+
+            foreach (Control control in PositionListFlowPanel.Controls)
+            {
+                if (control is PositionUC card)
+                {
+
+                    bool isMatch = card._positionName.ToLower().StartsWith(searchText);
+
+                    card.Visible = isMatch;
+                }
+            }
+
+
+            PositionListFlowPanel.ResumeLayout();
         }
     }
 }

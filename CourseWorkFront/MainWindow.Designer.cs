@@ -241,6 +241,7 @@
             this.SignOutButton.TabIndex = 7;
             this.SignOutButton.Text = "Sign Out";
             this.SignOutButton.UseVisualStyleBackColor = false;
+            this.SignOutButton.Click += new System.EventHandler(this.SignOutButton_Click);
             // 
             // SideBarTransitionTimer
             // 
@@ -254,6 +255,7 @@
             this.Controls.Add(this.SideBarFlowLayoutPanel);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
+            this.MinimizeBox = false;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindow";

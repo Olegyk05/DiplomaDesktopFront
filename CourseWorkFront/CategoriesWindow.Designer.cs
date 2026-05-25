@@ -31,6 +31,8 @@
             this.PositionListFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.CategoriesListFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.EditCategoriesListButton = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SearchTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // PositionListFlowPanel
@@ -64,11 +66,32 @@
             this.EditCategoriesListButton.UseVisualStyleBackColor = true;
             this.EditCategoriesListButton.Click += new System.EventHandler(this.EditCategoriesListButton_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(20, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 54);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Search:";
+            // 
+            // SearchTextBox
+            // 
+            this.SearchTextBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.SearchTextBox.Location = new System.Drawing.Point(175, 36);
+            this.SearchTextBox.Name = "SearchTextBox";
+            this.SearchTextBox.Size = new System.Drawing.Size(467, 61);
+            this.SearchTextBox.TabIndex = 5;
+            this.SearchTextBox.TextChanged += new System.EventHandler(this.SearchTextBox_TextChanged);
+            // 
             // CategoriesWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 1044);
+            this.Controls.Add(this.SearchTextBox);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.EditCategoriesListButton);
             this.Controls.Add(this.CategoriesListFlowPanel);
             this.Controls.Add(this.PositionListFlowPanel);
@@ -87,5 +110,7 @@
         private System.Windows.Forms.FlowLayoutPanel PositionListFlowPanel;
         private System.Windows.Forms.FlowLayoutPanel CategoriesListFlowPanel;
         private System.Windows.Forms.Button EditCategoriesListButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox SearchTextBox;
     }
 }

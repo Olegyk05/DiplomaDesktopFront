@@ -34,14 +34,6 @@ namespace CourseWorkFront
         private SettingsWindow _settingsWindow;
         private CategoriesWindow _categoryWindow;
 
-
-
-
-
-
-
-        
-
         public MainWindow(string token)
         {
             InitializeComponent();
@@ -232,6 +224,11 @@ namespace CourseWorkFront
         private void _categoriesWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
             _categoryWindow = null;
+        }
+
+        private void SignOutButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

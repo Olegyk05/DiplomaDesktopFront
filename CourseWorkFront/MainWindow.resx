@@ -127,6 +127,19 @@
         s8pUNpfgQLg8q8AzGLh8qMAK2AF7s8pUdjJyOs1c+gBqsSonAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="SignOutButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
+        1wAAAdcBjJIIaAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF5SURBVHhe7Zs9
+        SgRBEIXfQRRDES+imCoGmohn04OIXkRNDUz958EESzEDbe90+8p+H1S0RdHvmw12qWnAGGOMWWIXwD2A
+        LwDflfUE4DgOzgDDv8wEqqnHODwDfPIxSG2lFLDN136zGP4oDs9ADDIcFmABFmABFiAiYA/AFYCD+EFL
+        VAQw/Ot0hjcA57GhFSoCrsM53ntJUBFwOD357hJUBJCzKfTmeT4AXMTGNVESQLpLUBNAukpQFECWJFzG
+        xm1RFUC6SFAWQJpLUBdAmkrIIICctpKQRQBpIiGTALK6hFIBJwCeZ/qV6jYeuoQ4ZAkuPmKvYv2a0gHD
+        C+DaS13CTTx0CXGIOku/Car/J2QSsHp4kkVAk/Akg4Bm4Ym6gKbhibKA5uGJqoAu4YmigG7hiZqAruGJ
+        koDu4YmKgOEXI8OvxoZfjpKh1+N/hgVYgAVYwNAC1npZOu19gYeZMLWV8nX5/dEvTJAdAHcAPmdClVba
+        +wLGGGP+Oz9XQnZ6up8xYAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="OrdersButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAC
@@ -260,19 +273,6 @@
         ajpntR9MQGP05PZz4FlNH0wgY5vLPQg8+NR0rXC34tZ2lcz4T2YITnaBYKzRE5VqA89GISILMqHtm17E
         UkPtR1PECYyesZNH7WdzhOWNvjYesGBhpTclH05ahTcR6mUGhNztrZKV4dzmmmVsaLdHJlPGhpnYYFsj
         abFMfTwNyMKQhmtbCPpIV83b5/P/A+iSUybafmOsAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="SignOutButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
-        1wAAAdcBjJIIaAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF5SURBVHhe7Zs9
-        SgRBEIXfQRRDES+imCoGmohn04OIXkRNDUz958EESzEDbe90+8p+H1S0RdHvmw12qWnAGGOMWWIXwD2A
-        LwDflfUE4DgOzgDDv8wEqqnHODwDfPIxSG2lFLDN136zGP4oDs9ADDIcFmABFmABFiAiYA/AFYCD+EFL
-        VAQw/Ot0hjcA57GhFSoCrsM53ntJUBFwOD357hJUBJCzKfTmeT4AXMTGNVESQLpLUBNAukpQFECWJFzG
-        xm1RFUC6SFAWQJpLUBdAmkrIIICctpKQRQBpIiGTALK6hFIBJwCeZ/qV6jYeuoQ4ZAkuPmKvYv2a0gHD
-        C+DaS13CTTx0CXGIOku/Car/J2QSsHp4kkVAk/Akg4Bm4Ym6gKbhibKA5uGJqoAu4YmigG7hiZqAruGJ
-        koDu4YmKgOEXI8OvxoZfjpKh1+N/hgVYgAVYwNAC1npZOu19gYeZMLWV8nX5/dEvTJAdAHcAPmdClVba
-        +wLGGGP+Oz9XQnZ6up8xYAAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="SideBarTransitionTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

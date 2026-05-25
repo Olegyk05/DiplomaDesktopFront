@@ -36,58 +36,51 @@ namespace CourseWorkFront.UserControlers
 
         private void PositionNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            string Name = PositionNameTextBox.Text;
-            string price = PositionPriceTextBox.Text;
+
+            CheckCorrectDataInTextBoxes();
 
 
-            bool onlyLetters = Name.All(char.IsLetter);
-            //bool isEmpty = string.IsNullOrEmpty(Name);
-
-            bool isEmptyPrice = string.IsNullOrEmpty(price);
-            bool isEmptyName = string.IsNullOrEmpty(Name);
-
-            if (onlyLetters && Name.Length < 45 && !isEmptyPrice && !isEmptyName)
-            {
-                ErrorLabel.Visible = false;
-
-                ChangeDataButton.Enabled = true;
-
-            }
-            else
-            {
-                ErrorLabel.Visible = true;
-                ErrorLabel.Text = "Error Name";
-                ChangeDataButton.Enabled = false;
-
-            }
         }
 
         private void PositionPriceTextBox_TextChanged(object sender, EventArgs e)
         {
-            string price = PositionPriceTextBox.Text;
-            string Name = PositionNameTextBox.Text;
+            CheckCorrectDataInTextBoxes();
+        }
 
-            bool isEmptyPrice = string.IsNullOrEmpty(price);
-            bool isEmptyName = string.IsNullOrEmpty(Name);
+        private void CheckCorrectDataInTextBoxes()
+        {
+            string name = PositionNameTextBox.Text.Trim();
+            string priceText = PositionPriceTextBox.Text.Trim();
 
 
-            bool onlyDigit = price.All(char.IsDigit);
+            bool isNameValid = !string.IsNullOrEmpty(name) &&
+                                name.Length >= 2 &&
+                                name.Length < 45 &&
+                                name.All(c => char.IsLetterOrDigit(c) || c == ' ' || c == '-');
 
-            if (onlyDigit && price.Length > 0 && !isEmptyPrice && !isEmptyName)
+
+            bool isPriceValid = double.TryParse(priceText, out double parsedPrice) && parsedPrice > 0;
+
+
+            if (isNameValid && isPriceValid)
             {
-                //double digit = Convert.ToInt32(text); 
-                //if(digit)
                 ErrorLabel.Visible = false;
-
                 ChangeDataButton.Enabled = true;
-
             }
             else
             {
                 ErrorLabel.Visible = true;
-                ErrorLabel.Text = "Error Price";
                 ChangeDataButton.Enabled = false;
 
+
+                if (!isNameValid)
+                {
+                    ErrorLabel.Text = "Error Name";
+                }
+                else if (!isPriceValid)
+                {
+                    ErrorLabel.Text = "Error Price";
+                }
             }
         }
 

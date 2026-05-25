@@ -45,7 +45,8 @@ namespace CourseWorkFront
         public static List<PositionCategoryModel> PositionCategoryList = new List<PositionCategoryModel>();
         public static List<UserTypeModel> UserTypeList = new List<UserTypeModel>();
 
-
+        public static Action UpdatePositionsOnUI;
+        //private static Action UpdatePositionsOnUI;
 
 
 
@@ -61,7 +62,19 @@ namespace CourseWorkFront
         {
             RoleName = _RoleName;
         }
+        
         public static async void GetAllDataFromDB()
+        {
+            if(RoleName == "Admin")
+            {
+                await GetAllDataFromDBAsAdministrator();
+            }
+            else
+            {
+                await GetAllDataFromDBAsUser();
+            }
+        }
+        private static async Task GetAllDataFromDBAsAdministrator()
         {
             await GetAllOrdersFromDB();
             await GetAllPositionsFromDB();
@@ -75,7 +88,7 @@ namespace CourseWorkFront
             await UpdateOrdersAmount();
         }
 
-        public static async void GetAllDataFromDBAsUser()
+        private static async Task GetAllDataFromDBAsUser()
         {
             await GetAllOrdersFromDB();
             await GetAllPositionsFromDB();
@@ -367,7 +380,9 @@ namespace CourseWorkFront
                     {
                         PositionList.Add(createdPosition);
                     }
+                    UpdatePositionsOnUI?.Invoke();
                     MessageBox.Show("Success " + responseContent);
+
                 }
                 else
                 {
@@ -496,7 +511,7 @@ namespace CourseWorkFront
                     if (response.IsSuccessStatusCode)
                     {
                         PositionList.Remove(PositionList.FirstOrDefault(x => x.Id == PositionId));
-                        
+                        UpdatePositionsOnUI?.Invoke();
                         MessageBox.Show("Your Position deleted");
                         Result = true;
                     }
@@ -509,7 +524,6 @@ namespace CourseWorkFront
                         var errorObj = JsonConvert.DeserializeAnonymousType(jsonResponse, new { message = "" });
 
 
-                        //MessageBox.Show(errorObj.message, "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         MessageBox.Show(errorObj.message);
                     }
                     else
@@ -552,7 +566,8 @@ namespace CourseWorkFront
                         OldElement.Price = Position.Price;
                         OldElement.Name = Position.Name;
                     }
-                    
+
+                    UpdatePositionsOnUI?.Invoke();
                     MessageBox.Show("Success " + responseContent);
                 }
                 else

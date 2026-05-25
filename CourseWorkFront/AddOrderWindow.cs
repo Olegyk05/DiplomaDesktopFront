@@ -153,6 +153,8 @@ namespace CourseWorkFront
             PositionsFlowPanel.Controls.Clear();
             addAllPositionsOnFlow();
 
+            DataComponent.UpdatePositionsOnUI += addAllPositionsOnFlow;
+
         }
 
         private void AddOrderWindow_VisibleChanged(object sender, EventArgs e)

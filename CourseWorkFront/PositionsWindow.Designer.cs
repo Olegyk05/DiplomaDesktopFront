@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.categoriesFlowPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.AddPositionButton = new System.Windows.Forms.Button();
+            this.QRMenuButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // DishesListFlowPanel
@@ -135,11 +136,24 @@
             this.AddPositionButton.UseVisualStyleBackColor = true;
             this.AddPositionButton.Click += new System.EventHandler(this.AddPositionButton_Click);
             // 
+            // QRMenuButton
+            // 
+            this.QRMenuButton.AutoSize = true;
+            this.QRMenuButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.QRMenuButton.Image = ((System.Drawing.Image)(resources.GetObject("QRMenuButton.Image")));
+            this.QRMenuButton.Location = new System.Drawing.Point(89, 133);
+            this.QRMenuButton.Name = "QRMenuButton";
+            this.QRMenuButton.Size = new System.Drawing.Size(46, 42);
+            this.QRMenuButton.TabIndex = 18;
+            this.QRMenuButton.UseVisualStyleBackColor = true;
+            this.QRMenuButton.Click += new System.EventHandler(this.QRMenuButton_Click);
+            // 
             // PositionsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1344, 1156);
+            this.Controls.Add(this.QRMenuButton);
             this.Controls.Add(this.AddPositionButton);
             this.Controls.Add(this.categoriesFlowPanel);
             this.Controls.Add(this.label2);
@@ -168,5 +182,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.FlowLayoutPanel categoriesFlowPanel;
         private System.Windows.Forms.Button AddPositionButton;
+        private System.Windows.Forms.Button QRMenuButton;
     }
 }

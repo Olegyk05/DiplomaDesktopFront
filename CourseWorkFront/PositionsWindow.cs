@@ -1,6 +1,7 @@
 ﻿using CourseWorkFront.Models;
 using CourseWorkFront.UserControlers;
 using Newtonsoft.Json;
+using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,6 +36,7 @@ namespace CourseWorkFront
             addDishesToPanel();
             AddCategories();
 
+            DataComponent.UpdatePositionsOnUI += addDishesToPanel;
 
             EditCategoriesListWindow.UpdateCategoriestListInAnotherWindows += AddCategories;
         }
@@ -69,6 +71,8 @@ namespace CourseWorkFront
 
                 DishesListFlowPanel.Controls.Add(newPositionUC);
             }
+
+            
         }
 
         private void AddCategories()
@@ -238,6 +242,30 @@ namespace CourseWorkFront
         {
             AddNewPositionToDBWindow addNewPositionToDBWindow = new AddNewPositionToDBWindow();
             addNewPositionToDBWindow.ShowDialog();
+        }
+
+        private void QRMenuButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string url = "http://localhost:4200/menu";
+
+                using (QRCodeGenerator qrGenerator = new QRCodeGenerator())
+                using (QRCodeData qrCodeData = qrGenerator.CreateQrCode(url, QRCodeGenerator.ECCLevel.Q))
+                using (QRCode qrCode = new QRCode(qrCodeData))
+                {
+                    Bitmap qrCodeImage = qrCode.GetGraphic(20, Color.Black, Color.White, true);
+
+                    QRCodeForMenuWindow qrForm = new QRCodeForMenuWindow(qrCodeImage);
+
+
+                    qrForm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
     }
 }
